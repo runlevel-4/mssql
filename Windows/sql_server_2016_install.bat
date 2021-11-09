@@ -144,10 +144,12 @@ echo RUNNING SQL INSTALLER
 
 timeout 3 /nobreak
 
-:: Run the installer with the input parameters entered by the user
-:: Accepts all license agreements, fill in service account and directory info, and enable mixed-mode auth and sa account
+:: Runs the installer with the input parameters entered by the user
+:: Accepts all license agreements, fills in service account and directory info, and enables mixed-mode authentication
 :: Enables TCP/IP without having to go into SQL Configuration Manager
 
 "\\LOCATION\OF\SQL\INSTALLER\setup.exe" /QS /IACCEPTSQLSERVERLICENSETERMS /SQLSVCINSTANTFILEINIT="True" /SUPPRESSPRIVACYSTATEMENTNOTICE /ACTION="install" /FEATURES=SQLENGINE,FULLTEXT,BC,Conn,SDK /INSTANCENAME=%instanceName% /AGTSVCACCOUNT=%agtsvcaccount% /AGTSVCPASSWORD=%agtsvcpassword% /AGTSVCSTARTUPTYPE="Automatic" /SQLSVCACCOUNT=%sqlsvcaccount% /SQLSVCPASSWORD=%sqlsvcpassword% /SQLSVCSTARTUPTYPE="Automatic" /SECURITYMODE="SQL" /SAPWD=%sapwd% /SQLSYSADMINACCOUNTS="%domainUser%" /INSTALLSQLDATADIR=%driveLetter%:\SYSTEM /SQLUSERDBDIR=%driveLetter%:\%instanceName%\MSSQL13.%instanceName%\MSSQL\DATA /SQLUSERDBLOGDIR=%driveLetter%:\%instanceName%\MSSQL13.%instanceName%\MSSQL\DATA /SQLBACKUPDIR=%driveLetter%:\%instanceName%\MSSQL13.%instanceName%\MSSQL\DATA /SQLTEMPDBDIR=%driveLetter%:\TEMPDB\MSSQL13.%instanceName%\MSSQL\DATA /SQLTEMPDBLOGDIR=%driveLetter%:\TEMPDB\MSSQL13.%instanceName%\MSSQL\DATA /TCPENABLED=1 /UpdateEnabled=0
 
 pause
+echo.
+echo INSTALLATION COMPLETE.  IF YOU NEED TO SET A STATIC TCP/IP PORT, NOW IS THE TIME TO GO INTO THE SQL SERVER CONFIGURATION AND DO THAT.
