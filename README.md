@@ -13,4 +13,4 @@
 
 ### CentOS 8 ###
 1.  `git clone https://github.com/runlevel-4/mssql`
-2.  `sh linux/install_sql_centos_8x.sh`
+2.  `sh linux/install_sql_centos_8.sh`
