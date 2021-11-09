@@ -1,4 +1,6 @@
-**NOTE:** This script assumes you use 3 separate mount points for your SQL directories.
+## RUN THIS SCRIPT AS ADMINISTRATOR OR ELSE THE DISKPART PIECE WILL NOT WORK! ##
+
+**NOTE:** This script assumes you use 3 separate mount points for your SQL directories (one for user databases, system databases, and tempdb).
 
 Be sure to **change line 147** to point to the location of your SQL Server **setup.exe** file
 
