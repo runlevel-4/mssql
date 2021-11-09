@@ -79,6 +79,8 @@ timeout 3 /nobreak
 echo RETRIEVING VOLUME INFO...
 
 echo.
+pause
+echo.
 
 echo > diskpart_volumes.txt LIST VOLUME
 diskpart /s diskpart_volumes.txt
@@ -123,6 +125,8 @@ echo >> diskpart_volumes.txt ASSIGN mount=%driveLetter%:\TEMPDB\
 diskpart /s diskpart_volumes.txt
 
 echo.
+echo CHECK TO MAKE SURE THE MOUNT POINTS ARE MOUNTED TO THE FOLDERS THAT WERE CREATED IN TEH PREVIOUS STEP BEFORE CONTINUING TO THE INSTALLER.
+pause
 
 ::Create the rest of the directories
 echo FINISHING DIRECTORY CREATIONS
